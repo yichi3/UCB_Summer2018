@@ -1,0 +1,328 @@
+For OddRegressionModel, I first use learning rate = 0.2 and h = 20, which lead to the explosion of the data
+Then I try several different learning rate
+learning rate to be 0.05 with h = 20    final loss after 20,000 iterations is 0.019576
+learning rate to be 0.03 with h = 20    final loss after 20,000 iterations is 0.004700
+learning rate to be 0.01 with h = 20    final loss after 20,000 iterations is 0.001234
+
+
+For DigitClassificationModel
+learning rate = 0.05:
+epoch 0.00/5.00 validation-accuracy 10.25%
+epoch 0.25/5.00 validation-accuracy 12.10%
+epoch 0.50/5.00 validation-accuracy 7.21%
+epoch 0.75/5.00 validation-accuracy 15.39%
+epoch 1.00/5.00 validation-accuracy 8.28%
+epoch 1.25/5.00 validation-accuracy 13.79%
+epoch 1.50/5.00 validation-accuracy 6.48%
+epoch 1.75/5.00 validation-accuracy 15.14%
+epoch 2.00/5.00 validation-accuracy 7.97%
+epoch 2.25/5.00 validation-accuracy 11.40%
+epoch 2.50/5.00 validation-accuracy 10.19%
+epoch 2.75/5.00 validation-accuracy 8.20%
+epoch 3.00/5.00 validation-accuracy 9.26%
+epoch 3.25/5.00 validation-accuracy 11.90%
+epoch 3.50/5.00 validation-accuracy 8.28%
+epoch 3.75/5.00 validation-accuracy 13.02%
+epoch 4.00/5.00 validation-accuracy 9.36%
+epoch 4.25/5.00 validation-accuracy 10.65%
+epoch 4.50/5.00 validation-accuracy 3.93%
+epoch 4.75/5.00 validation-accuracy 9.95%
+epoch 5.00/5.00 validation-accuracy 11.61%
+
+This time, I update the architecture by adding another layer with parameters as follow:
+self.learning_rate = 0.005
+self.h1 = 300
+self.h2 = 200
+training process:
+epoch 0.00/5.00 validation-accuracy 9.57%
+epoch 0.25/5.00 validation-accuracy 19.41%
+epoch 0.50/5.00 validation-accuracy 25.99%
+epoch 0.75/5.00 validation-accuracy 33.16%
+epoch 1.00/5.00 validation-accuracy 39.11%
+epoch 1.25/5.00 validation-accuracy 43.74%
+epoch 1.50/5.00 validation-accuracy 47.55%
+epoch 1.75/5.00 validation-accuracy 50.70%
+epoch 2.00/5.00 validation-accuracy 53.88%
+epoch 2.25/5.00 validation-accuracy 56.30%
+epoch 2.50/5.00 validation-accuracy 58.68%
+epoch 2.75/5.00 validation-accuracy 60.52%
+epoch 3.00/5.00 validation-accuracy 62.25%
+epoch 3.25/5.00 validation-accuracy 63.95%
+epoch 3.50/5.00 validation-accuracy 65.58%
+epoch 3.75/5.00 validation-accuracy 67.00%
+epoch 4.00/5.00 validation-accuracy 68.33%
+epoch 4.25/5.00 validation-accuracy 69.10%
+epoch 4.50/5.00 validation-accuracy 70.36%
+epoch 4.75/5.00 validation-accuracy 71.22%
+epoch 5.00/5.00 validation-accuracy 72.25%
+
+change the learning rate to 0.05
+epoch 5.00/5.00 validation-accuracy 90.90%
+
+change the learning rate to 0.07
+epoch 5.00/5.00 validation-accuracy 91.51%
+
+change the learning rate to 0.15
+epoch 5.00/5.00 validation-accuracy 93.71%
+
+change the learning rate to 0.3
+epoch 5.00/5.00 validation-accuracy 94.81%
+
+change the learning rate to 0.5
+epoch 5.00/5.00 validation-accuracy 95.27%
+
+I add another layer to the graph
+now the parameters are:
+learning rate = 0.5
+self.h1 = 300
+self.h2 = 200
+self.h3 = 100
+epoch 5.00/5.00 validation-accuracy 95.64%
+
+learning rate = 2.0
+self.h1 = 400
+self.h2 = 300
+self.h3 = 300
+epoch 5.00/5.00 validation-accuracy 96.82%
+finally, I run the code again without changing parameters
+epoch 5.00/5.00 validation-accuracy 97.13%
+
+Then I try to add another layer
+Now I have 4 layers
+self.h1 = 400
+self.h2 = 300
+self.h3 = 300
+self.h4 = 300
+learning rate = 2.0
+epoch 5.00/5.00 validation-accuracy 97.25%
+
+For DeepQModel
+First, I try learning rate = 0.5, which gives me an NAN.
+Then I change the learning rate to 0.01 and it works.
+[Episode:  10] Reward:  25.0 Mean Reward of last 10 episodes:  34.6 epsilon:  0.82
+[Episode:  20] Reward:  40.0 Mean Reward of last 10 episodes:  34.7 epsilon:  0.62
+[Episode:  30] Reward:  54.0 Mean Reward of last 10 episodes:  50.9 epsilon:  0.43
+[Episode:  40] Reward:  90.0 Mean Reward of last 10 episodes:  71.5 epsilon:  0.23
+[Episode:  50] Reward: 141.0 Mean Reward of last 10 episodes: 131.0 epsilon:  0.03
+[Episode:  60] Reward: 200.0 Mean Reward of last 10 episodes: 189.4 epsilon:  0.01
+Completed in 62 episodes with mean reward 196.1
+[Episode:  10] Reward:  29.0 Mean Reward of last 10 episodes:  36.0 epsilon:  0.82
+[Episode:  20] Reward:  26.0 Mean Reward of last 10 episodes:  38.0 epsilon:  0.62
+[Episode:  30] Reward:  39.0 Mean Reward of last 10 episodes:  38.3 epsilon:  0.43
+[Episode:  40] Reward:  49.0 Mean Reward of last 10 episodes:  46.8 epsilon:  0.23
+[Episode:  50] Reward:  79.0 Mean Reward of last 10 episodes:  82.3 epsilon:  0.03
+[Episode:  60] Reward: 200.0 Mean Reward of last 10 episodes: 169.6 epsilon:  0.01
+Completed in 65 episodes with mean reward 197.8
+[Episode:  10] Reward:  31.0 Mean Reward of last 10 episodes:  33.5 epsilon:  0.82
+[Episode:  20] Reward:  34.0 Mean Reward of last 10 episodes:  33.8 epsilon:  0.62
+[Episode:  30] Reward:  67.0 Mean Reward of last 10 episodes:  41.1 epsilon:  0.43
+[Episode:  40] Reward:  36.0 Mean Reward of last 10 episodes:  38.8 epsilon:  0.23
+[Episode:  50] Reward:  56.0 Mean Reward of last 10 episodes:  44.8 epsilon:  0.03
+[Episode:  60] Reward:  60.0 Mean Reward of last 10 episodes:  69.6 epsilon:  0.01
+[Episode:  70] Reward:  92.0 Mean Reward of last 10 episodes:  91.6 epsilon:  0.01
+[Episode:  80] Reward: 200.0 Mean Reward of last 10 episodes: 186.3 epsilon:  0.01
+Completed in 81 episodes with mean reward 197.0
+
+
+For the LanguageIDModel
+Questions:
+# set the parameters
+# if not self.batch_size == batch_size:
+#     # f = ReLU(h * W1 + c * W2 + b1) * W3 + b2
+#     # size: (h has size batch_size x h1, c has size batch_size x 47)
+#     # W1: h1 x h2, W2: 47 x h2, b1: 1 x h1, W3: h2 x h1, b2: 1 x h1
+#     self.batch_size = batch_size
+#     self.h  = nn.Variable(self.batch_size, self.h1)
+#     # make sure that every row of h is the same
+#     # h_data = np.zeros_like(self.h.data)
+#     h_data = np.ones_like(self.h.data) / (self.batch_size * self.h1)
+#     self.h.data = h_data
+#     self.W1 = nn.Variable(self.h1, self.h2)
+#     self.b1 = nn.Variable(1, self.h2)
+#     self.W2 = nn.Variable(self.num_chars, self.h2)
+#     self.b2 = nn.Variable(1, self.h1)
+#     self.W3 = nn.Variable(self.h2, self.h1)
+#     self.W4 = nn.Variable(self.h1, len(self.languages))
+#     self.b3 = nn.Variable(1, len(self.languages))
+
+
+# # first architecture
+# # suumary
+# # there are total batch_size = 16 words. every word has 10 characters and each charactor has 47 possible value
+# graph = nn.Graph([self.W1, self.W2, self.b1, self.b2, self.W3, self.h, self.W4, self.b3])
+
+# h_node = self.h
+# # use a for loop to add all char in one word to the graph
+# for c_value in xs:
+#     input_c = nn.Input(graph, c_value)
+#     h_node = self.helper_function(graph, h_node, input_c)
+# # at this time, h_node is the output of the RNN
+# # we need to compare this number to y
+# # g(h) = h * W4 + b3
+# # size:
+# # h: batch_size x h1, W4: h1 x 5, b3: 1 x 5
+# mul = nn.MatrixMultiply(graph, h_node, self.W4)
+# add = nn.MatrixVectorAdd(graph, mul, self.b3)
+
+# def helper_function(self, graph, h, c):
+#     # this function helps to calculate the feature f(h, c)
+#     # f = ReLU(h * W1 + c * W2 + b1) * W3 + b2
+#     # size: (h has size batch_size x h1, c has size batch_size x 47)
+#     # W1: h1 x h2, W2: 47 x h2, b1: 1 x h2, W3: h2 x h1, b2: 1 x h1
+#     mul_1 = nn.MatrixMultiply(graph, h, self.W1)
+#     mul_2 = nn.MatrixMultiply(graph, c, self.W2)
+#     add_1 = nn.Add(graph, mul_1, mul_2)
+#     add_2 = nn.MatrixVectorAdd(graph, add_1, self.b1)
+#     relu_1 = nn.ReLU(graph, add_1)
+
+#     mul_3 = nn.MatrixMultiply(graph, relu_1, self.W3)
+#     add_3 = nn.MatrixVectorAdd(graph, mul_3, self.b2)
+#     return add_3
+
+
+# if y is not None:
+#     "*** YOUR CODE HERE ***"
+#     input_y = nn.Input(graph, y)
+#     loss = nn.SquareLoss(graph, add, input_y)
+#     return graph
+
+# else:
+#     "*** YOUR CODE HERE ***"
+#     value_output = graph.get_output(add)
+#     # in this case, we need to find the largest number among 5 choices
+#     output = self.helper_get_output(value_output)
+#     return value_output
+
+
+
+# second architecture
+chars = np.hstack(xs)
+if not self.batch_size == batch_size:
+    self.batch_size = batch_size
+    self.h1 = 500
+    self.h2 = 500
+    self.h3 = 500
+    self.h4 = 500
+    num = self.num_chars * len(xs)
+    self.h  = nn.Variable(self.batch_size, self.h1)
+    # make sure that every row of h is the same
+    h_data = np.zeros_like(self.h.data)
+    # h_data = np.ones_like(self.h.data) / (self.batch_size * self.h1)
+    self.h.data = h_data
+    self.W1 = nn.Variable(self.h1, self.h2)
+    self.b1 = nn.Variable(1, self.h2)
+    self.W2 = nn.Variable(num, self.h2)
+    self.b2 = nn.Variable(1, self.h3)
+    self.W3 = nn.Variable(self.h2, self.h3)
+    self.W4 = nn.Variable(self.h3, 5)
+    self.b3 = nn.Variable(1, 5)
+
+graph = nn.Graph([self.W1, self.W2, self.b1, self.b2, self.W3, self.h, self.W4, self.b3])
+# f(h, c) = ReLU(ReLU(h x W1 + c x W2 + b1) * W3 + b2) * W4 + b3
+input_c = nn.Input(graph, chars)
+mul_1 = nn.MatrixMultiply(graph, self.h, self.W1)
+mul_2 = nn.MatrixMultiply(graph, input_c, self.W2)
+add_1 = nn.Add(graph, mul_1, mul_2)
+add_2 = nn.MatrixVectorAdd(graph, add_1, self.b1)
+relu_1 = nn.ReLU(graph, add_2)
+
+mul_3 = nn.MatrixMultiply(graph, relu_1, self.W3)
+add_3 = nn.MatrixVectorAdd(graph, mul_3, self.b2)
+relu_2 = nn.ReLU(graph, add_3)
+
+mul_4 = nn.MatrixMultiply(graph, relu_2, self.W4)
+add = nn.MatrixVectorAdd(graph, mul_4, self.b3)
+
+if y is not None:
+    "*** YOUR CODE HERE ***"
+    input_y = nn.Input(graph, y)
+    loss = nn.SquareLoss(graph, add, input_y)
+    return graph
+
+else:
+    "*** YOUR CODE HERE ***"
+    value_output = graph.get_output(add)
+    # in this case, we need to find the largest number among 5 choices
+    # output = self.helper_get_output(value_output)
+    return value_output
+
+
+
+
+
+
+
+
+
+
+# chars = np.hstack(xs)
+# # f(h, c) = ReLU( ReLU(h x W11 + c x W21 + b11) * W31 + ReLU(h x W12 + c x W22 + b12) * W32 + b2 ) * W4 + b3
+# if not self.batch_size == batch_size:
+#     self.batch_size = batch_size
+#     num = self.num_chars * len(xs)
+#     self.h  = nn.Variable(self.batch_size, self.h1)
+#     # make sure that every row of h is the same
+#     h_data = np.zeros_like(self.h.data)
+#     # h_data = np.ones_like(self.h.data) / (self.batch_size * self.h1)
+#     self.h.data = h_data
+#     self.W11 = nn.Variable(self.h1, self.h2)
+#     self.b11 = nn.Variable(1, self.h2)
+#     self.W21 = nn.Variable(num, self.h2)
+#     self.W31 = nn.Variable(self.h2, self.h3)
+
+#     self.W12 = nn.Variable(self.h1, self.h2)
+#     self.b12 = nn.Variable(1, self.h2)
+#     self.W22 = nn.Variable(num, self.h2)
+#     self.W32 = nn.Variable(self.h2, self.h3)
+
+#     self.b2 = nn.Variable(1, self.h3)
+
+#     self.W4 = nn.Variable(self.h3, 5)
+#     self.b3 = nn.Variable(1, 5)
+
+# graph = nn.Graph([self.h, self.W11, self.b11, self.W21, self.W31, self.W12, self.b12, self.W22, self.W32, self.b2, self.W4, self.b3])
+# input_c = nn.Input(graph, chars)
+# #ReLU(h x W11 + c x W21 + b11)
+# mul_11 = nn.MatrixMultiply(graph, self.h, self.W11)
+# mul_21 = nn.MatrixMultiply(graph, input_c, self.W21)
+# add_11 = nn.Add(graph, mul_11, mul_21)
+# add_21 = nn.MatrixVectorAdd(graph, add_11, self.b11)
+# relu_11 = nn.ReLU(graph, add_21)
+# # ReLU(h x W12 + c x W22 + b12)
+# mul_12 = nn.MatrixMultiply(graph, self.h, self.W12)
+# mul_22 = nn.MatrixMultiply(graph, input_c, self.W22)
+# add_12 = nn.Add(graph, mul_12, mul_22)
+# add_22 = nn.MatrixVectorAdd(graph, add_12, self.b12)
+# relu_12 = nn.ReLU(graph, add_22)
+# # relu_11 * W31 + relu_12 * W32 + b2
+# mul_1 = nn.MatrixMultiply(graph, relu_11, self.W31)
+# mul_2 = nn.MatrixMultiply(graph, relu_12, self.W32)
+# add_1 = nn.Add(graph, mul_1, mul_2)
+# add_2 = nn.MatrixVectorAdd(graph, add_1, self.b2)
+# # ReLU(add_2)
+# relu_2 = nn.ReLU(graph, add_2)
+# # relu_2 * W4 + b3
+# mul_3 = nn.MatrixMultiply(graph, relu_2, self.W4)
+# add_3 = nn.MatrixVectorAdd(graph, mul_3, self.b3)
+
+# if y is not None:
+#     "*** YOUR CODE HERE ***"
+#     input_y = nn.Input(graph, y)
+#     loss = nn.SquareLoss(graph, add_3, input_y)
+#     return graph
+
+# else:
+#     "*** YOUR CODE HERE ***"
+#     value_output = graph.get_output(add_3)
+#     # in this case, we need to find the largest number among 5 choices
+#     # output = self.helper_get_output(value_output)
+#     return value_output
+
+
+
+
+
+
+
+
+
